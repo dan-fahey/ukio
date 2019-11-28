@@ -27,7 +27,8 @@ ukio_2015 <- cells %>%
                       behead("N", by_iog_code) %>%
                       behead("N", by_description))) %>%
   unnest(data) %>%
-  select(sheet, row, col, iog_code, product_description, by_iog_code, by_description, matrix_value = numeric) %>%
+  select(sheet, row, col, iog_code, product_description, by_iog_code,
+         by_description, matrix_value = numeric) %>%
   mutate_at(vars(contains("description")), str_trim)
 
 write_csv(ukio_2015, "ukio_2015.csv")
