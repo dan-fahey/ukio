@@ -14,6 +14,7 @@ formats <- xlsx_formats(xlsx)
 
 sheets <- excel_sheets(xlsx)
 
+# Identify the eight IOT (four each of PxP and PxI)
 iot_sheets <- sheets[2:10] %>%
   str_subset("Detailed Imports", negate = TRUE)
 
